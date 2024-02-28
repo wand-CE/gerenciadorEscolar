@@ -1,0 +1,14 @@
+<article data-theme="light">
+    <h3>Nossos cursos</h3>
+    {% for c in cursos %}
+    <details>
+      <summary role="button" class="outline">{{ c.nome }}</summary>
+        <h4>Disciplinas:</h4>
+        {% for d in c.curso_disciplinas.all %}
+        <p>{{ d }}</p>
+        {% empty %}
+        <p>Sem disciplinas!!!</p>
+        {% endfor %}
+    </details>
+    {% endfor %}
+</article>
